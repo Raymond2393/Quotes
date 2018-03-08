@@ -1,9 +1,26 @@
-<h1> Quotes </h1>
-  <div class="container">
-  <div *ngFor='let quote of quotes;let i=index'>
-    <div class="row">
-    <li id="{{i}}">{{quote.name}} due on {{quote.remove|date|uppercase}}</li>
-    <app-quote-details [quote]='quote' (isRemove)='removeQuote($event)'></app-quote-details>
-  </div>
+<h1> QUOTES</h1>
+<hr>
+
+<div class="container">
+  <div class="row">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>
 </div>
+
+
+
+
+
+
+
+<div class="container quotas">
+  <div class="row" *ngFor="let quote of quotes;let i = 'index'">
+
+<!--
+    <h3 id="{{i}}">{{quote.description}}</h3>
+    <h4>{{quote.name}}</h4> -->
+    <!-- <h5>This quote was uploaded {{quote.createDate|dateCount}} days ago.</h5> -->
+
+    <app-quote-details [quote]='quote' (isRemove)= 'removeQuote($event,i)'></app-quote-details>
+  </div><!-- row let -->
+</div><!-- container -->
