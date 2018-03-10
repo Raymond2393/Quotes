@@ -9,19 +9,8 @@
 </div>
 
 
-
-
-
-
-
 <div class="container quotes">
   <div class="row" *ngFor="let quote of quotes;let i = 'index'">
-
-<!--
-    <h3 id="{{i}}">{{quote.description}}</h3>
-    <h4>{{quote.name}}</h4> -->
-    <!-- <h5>This quote was uploaded {{quote.createDate|dateCount}} days ago.</h5> -->
-
     <app-quote-details [quote]='quote' (isRemove)= 'removeQuote($event,i)'></app-quote-details>
-  </div><!-- row let -->
-</div><!-- container -->
+  </div>
+</div>

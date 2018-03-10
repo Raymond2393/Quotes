@@ -1,3 +1,16 @@
 <p>{{quote.description}}</p>
-<button class="btn btn-danger" (click) = 'quoteRemove(true)'> Remove </button>
-<p> This quote will be completed in {{quote.completeDate|dateCount}} days</p>
+<h4>{{quote.name}}</h4>
+<!-- <button class="btn btn-danger" (click) = 'quoteRemove(true)'> Remove </button> -->
+<p> This quote will be completed in {{quote.createDate|dateCount}} days</p>
+<button (click)='voteUp()' class="btn btn-default btn-up" type="submit">
+    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    <span class="badge">{{upvote}}</span>
+</button>
+
+<button  (click)='voteDown()' class="btn btn-default btn-down" type="submit">
+    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+    <span class="badge">{{downvote}}</span>
+</button>
+
+
+<button (click) = 'quoteRemove(true)'class="btn-remove" >Delete Quote</button>
